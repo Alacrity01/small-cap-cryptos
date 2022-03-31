@@ -1,0 +1,33 @@
+# boomer portfolio: 75% btc, 25% eth
+# memefolio: 75% doge, 25% shiba
+
+# midcaps: 25% matic, 25% mana, 25%
+
+midcaps = [
+	matic,
+	mana,
+	dot,
+	ada
+]
+
+# small_caps = [
+	mpl,
+	something_no_one_has_head_of...
+]
+
+1 year ago from current if > 1 year listing
+
+**unit bias
+
+does the price of the token equate to larger overall returns? (visualization)
+
+--any studies/data on layperson beliefs on crypto investments?
+
+...what free api has the most cryptos? or is there a coinbase api we could use?
+
+kraken, gemini...
+
+historical data -- need price, market cap, volume (may be needed for monte carlo), 
+
+
+

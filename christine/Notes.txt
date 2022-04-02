@@ -1,0 +1,15 @@
+Alphavantage API -> DIGITAL_CURRENCY_DAILY
+https://www.alphavantage.co/documentation/
+
+apikey = 18KY2BWOUMH8CLX6
+
+API Example from Alphavantage
+https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BTC&market=USD&apikey=18KY2BWOUMH8CLX6
+
+
+....
+CoinGecko
+https://www.coingecko.com/en/api/documentation
+
+Has potential but struggling with responsiveness of site and finding relevant timestamp data
+

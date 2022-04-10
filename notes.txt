@@ -1,4 +1,53 @@
+MUST HAVE:   (https://nu.bootcampcontent.com/NU-Coding-Bootcamp/NU-VIRT-FIN-PT-02-2022-U-LOL/-/blob/main/03-Projects/Project-01/TechnicalRequirements.md)
+
+README.md (must include installation script -- use Mark's pyViz script and any additional)    -class repo-> lesson plans / supplemental
+.ppt (include in repo as pdf or google slides)
+Images folder with .png files
+complete survey (https://docs.google.com/forms/d/e/1FAIpQLSfkfZNU4a-DifSQ776N5xebl1yDOO5PiOvLzNorprF3N1MemA/viewform)
+
+
+
+
+
+
+
+
+notes 4-9 saturday
+
+
+
+
+
+
+
 # boomer portfolio: 75% btc, 25% eth
+
+[algo 1] ~ - cumulative return over 1 year for lowest 5 market cap vs - cumulative return for 75/25 eth (bar chart) (think S&P vs Soros)
+[algo 2] ~ - cumulative rturn for lowest 20 (1 year data available)
+
+- all eth
+- all btc
+- eth btc 50/50
+- eth/btc 75/25 
+
+cumulative return over 1 year (line chart)
+rolling std dev (line chart)
+box plot (...)
+correlation with heatmap (heatmap)
+
+use:
+- pyviz
+- panel
+- plotly
+- hvPlot
+
+save as .png
+
+
+
+
+
+
 # memefolio: 75% doge, 25% shiba
 
 # midcaps: 25% matic, 25% mana, 25%

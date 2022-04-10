@@ -148,4 +148,28 @@ node_modules/
 # vscode files
 .vscode
 
+
+
+
+
+# Jeff's gitignore additions
 jeff/temp.py
+jeff/05-APIs-homework-main/
+jeff/fizzbuzz_python.py
+jeff/fizzbuzz_ruby.rb
+Data/test
+Data/Test
+jeff/TROUBLESHOOTING.md
+__pycache__/MCForecastTools.cpython-39.pyc
+crypto_analysis-Copy1.ipynb
+jeff/api_calls-Copy1.ipynb
+# offline
+# jeff/offline
+**/offline
+**.pyc
+
+# # clear with group first
+# jeff/
+# christine/
+# ameira/
+# justin/

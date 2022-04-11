@@ -2,36 +2,39 @@
 
 ## Background 
 
-Some people play the lottery hoping to win big, but what about a small cap crypto? Whether it be luck or consistently watching the market trends, many have made money, lost, or broke even using a minimum amount of funds to invest in smaller cryptocurrencies and seeing if and how their profits would multiply. Using CoinGecko we have reviewed and watched the trends of multiple small cap cryptos and compared them to the growth of larger crypto currencies such as Bitcoin & Ethereum.  The list of crypto currencies we followed trends on are listed below:
- 'bitcoin',
- 'ethereum',
- 'pluton',
- 'pawtocol',
- 'aventus',
- 'harvest-finance',
- 'quick',
- 'district0x',
- 'circuits-of-value',
- 'bonfida',
- 'yfii-finance',
- 'alchemix',
- 'balancer',
- 'arpa-chain',
- 'propy',
- 'aurora-dao',
- 'gyen',
- 'unifi-protocol-dao',
- 'inverse-finance',
- 'auction',
- 'suku',
- 'kryll',
- 'measurable-data-token',
- 'quantstamp',
- 'liquity',
- 'barnbridge',
- 'tellor',
- 'polyswarm'
+***Some people play the lottery hoping to win big, but what about a small cap crypto?***
 
+Whether it be luck or consistently watching the market trends, many have made money, lost, or broke even using a minimum amount of funds to invest in smaller cryptocurrencies and seeing if and how their profits would multiply. Using CoinGecko we have reviewed and watched the trends of multiple small cap cryptos and compared them to the growth of larger crypto currencies such as Bitcoin & Ethereum.  The list of crypto currencies we followed trends on are listed below:
+	
+	'bitcoin',
+	'ethereum',
+	'pluton',
+	'pawtocol',
+	'aventus',
+	'harvest-finance',
+	'quick',
+	'district0x',
+	'circuits-of-value',
+	'bonfida',
+	'yfii-finance',
+	'alchemix',
+	'balancer',
+	'arpa-chain',
+	'propy',
+	'aurora-dao',
+	'gyen',
+	'unifi-protocol-dao',
+	'inverse-finance',
+	'auction',
+	'suku',
+	'kryll',
+	'measurable-data-token',
+	'quantstamp',
+	'liquity',
+	'barnbridge',
+	'tellor',
+	'polyswarm'
+	
 By using tools such as MCsimulation and implementing different graphs and plots we are be able to forecast a reasonably strong prediction as to the direction these cryptos have had as well as potentially become. Our implementation of API's from CoinGecko will assist in accurate trend analysis as well as financial predictions and visualizations on where to see the maximized growth when investing in the small cap cryptos and where they stand for portfolio returns compared to the strenghts of Bitcoin and Ethereum.
 
 ### Resources
@@ -46,45 +49,48 @@ Limit window analysis = 365 days
 
 #### Initial Imports & PyViz Environment tools required for packages:
 
-import pandas as pd
-from pathlib import Path
-import os
-import numpy as np
-from MCForecastTools import MCSimulation
+	import pandas as pd
+	from pathlib import Path
+	import os
+	import numpy as np
+	from MCForecastTools import MCSimulation
 
-import warnings # to suppress repeated warnings during montecarlo simulation
-warnings.filterwarnings('ignore')
+	import warnings # to suppress repeated warnings during montecarlo simulation
+	warnings.filterwarnings('ignore')
 
-import seaborn as sns
-import matplotlib.pyplot as plt
-import panel as pn
-from panel.interact import interact
-import plotly.express as px
+	import seaborn as sns
+	import matplotlib.pyplot as plt
+	import panel as pn
+	from panel.interact import interact
+	import plotly.express as px
 
-pn.extension("plotly")
-%matplotlib inline
+	pn.extension("plotly")
+	%matplotlib inline
 
-import hvplot.pandas
+	import hvplot.pandas
 
-PyViz Installation Guide
+**PyViz Installation Guide**
+
 PyViz is a Python visualization package that provides a single platform to access multiple visualization packages, including Matplotlib, Plotly Express, hvPlot, Panel, D3.js, etc.
 Follow the steps below to install and set up PyViz in your Python environment. These steps should be completed outside of class.
+
 Video Guide for installing PyViz: PyViz Installation Video
+
 NOTE: Make sure that you are using your conda environment that has anaconda installed. Create a new environment for this lesson using:
 
-conda update anaconda
-conda create -n pyvizenv python=3.7 anaconda -y
-conda activate pyvizenv
+	conda update anaconda
+	conda create -n pyvizenv python=3.7 anaconda -y
+	conda activate pyvizenv
 
 
 Before installing the PyViz dependencies, you need to install a couple of libraries. First, install the python-dotenv library using pip to work with environment variables.
 
-pip install python-dotenv
+	pip install python-dotenv
 
 
 Next, install the nb_conda package that will allow you to switch between virtual environments in Jupyter lab.
 
-conda install -c anaconda nb_conda -y
+	conda install -c anaconda nb_conda -y
 
 
 Follow the next steps to install PyViz and all its dependencies in your Python virtual environment.
@@ -92,28 +98,22 @@ Follow the next steps to install PyViz and all its dependencies in your Python v
 
 Download the PyViz dependencies nodejs and npm (included in nodejs).
 
-conda install -c conda-forge nodejs=12 -y
+	conda install -c conda-forge nodejs=12 -y
 
 
 
 
 Use the conda install command to install the following packages. Note: On some of these installs, you may get a message that says that the requested packages are already installed. That is fine. Conda is really good at installing all of the required dependencies between these tools.
 
-conda install -c pyviz holoviz -y
-conda install -c plotly plotly -y
-conda install -c conda-forge jupyterlab=2.2 -y
-
-
+	conda install -c pyviz holoviz -y
+	conda install -c plotly plotly -y
+	conda install -c conda-forge jupyterlab=2.2 -y
 
 
 Use pip to install the correct versions of matplotlib and numpy using the following commands:
 
-
-
-pip install numpy==1.19
-pip install matplotlib==3.0.3
-
-
+	pip install numpy==1.19
+	pip install matplotlib==3.0.3
 
 
 PyViz installation also requires the installation of Jupyter Lab extensions. These extensions are used to render PyViz plots in Jupyter Lab. Execute the below commands to install the necessary Jupyter Lab extensions for PyViz and Plotly Express.
@@ -124,36 +124,31 @@ IMPORTANT: In some installation cases you may encounter the following warning. I
 Config option `kernel_spec_manager_class` not recognized by `EnableNBExtensionApp`
 
 
-
-
 Set NODE_OPTIONS to prevent "JavaScript heap out of memory" errors during extension installation:
 
-# (OS X/Linux)
-export NODE_OPTIONS=--max-old-space-size=4096
+	# (OS X/Linux)
+	export NODE_OPTIONS=--max-old-space-size=4096
 
-# (Windows)
-set NODE_OPTIONS=--max-old-space-size=4096
+	# (Windows)
+	set NODE_OPTIONS=--max-old-space-size=4096
 
 
 
 
 Install the Jupyter Lab extensions:
 
-jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build
-
-jupyter labextension install jupyterlab-plotly --no-build
-
-jupyter labextension install plotlywidget --no-build
-
-jupyter labextension install @pyviz/jupyterlab_pyviz --no-build
+	jupyter labextension install @jupyter-widgets/
+	jupyterlab-manager --no-build
+	jupyter labextension install jupyterlab-plotly --no-build
+	jupyter labextension install plotlywidget --no-build
+	jupyter labextension install @pyviz/jupyterlab_pyviz --no-build
 
 
 
 
 Build the extensions (This may take a few minutes):
 
-jupyter lab build
-
+	jupyter lab build
 
 
 
@@ -162,31 +157,31 @@ Using the build and --no-build flags allows the machine to build all four extens
 
 After the build, unset the node options that you used above:
 
-# Unset NODE_OPTIONS environment variable
-# (OS X/Linux)
-unset NODE_OPTIONS
+	# Unset NODE_OPTIONS environment variable
+	# (OS X/Linux)
+	unset NODE_OPTIONS
 
-# (Windows)
-set NODE_OPTIONS=
+	# (Windows)
+	set NODE_OPTIONS=
 
 
 Run the following commands to confirm installation of all PyViz packages. Look for version numbers with at least the following versions.
 
-conda list nodejs
-conda list holoviz
-conda list hvplot
-conda list panel
-conda list plotly
+	conda list nodejs
+	conda list holoviz
+	conda list hvplot
+	conda list panel
+	conda list plotly
 
 
 
-nodejs                    12.0.0
-holoviz                   0.11.3
-hvplot                    0.7.1
-panel                     0.10.3
-plotly                    4.14.3
-numpy                     1.19
-matplotlib                3.0.3
+- nodejs                    12.0.0
+- holoviz                   0.11.3
+- hvplot                    0.7.1
+- panel                     0.10.3
+- plotly                    4.14.3
+- numpy                     1.19
+- matplotlib                3.0.3
 
 
 ## Jupyter Lab Environment
@@ -230,28 +225,25 @@ If you have issues with PyViz or Jupyter Lab, you may need to update your Conda 
 
 Deactivate your current Conda environment. This is required in order to update the global Conda environment. Be sure to quit any running applications such as Jupyter prior to deactivating the environment.
 
-conda deactivate
+	conda deactivate
 
 
 
 
-** Update Conda.
+	** Update Conda.
 
-conda update conda
+	conda update conda
 
-Create a fresh Conda environment to use with PyViz.
+*Create a fresh Conda environment to use with PyViz.*
 
-conda create -n pyvizenv python=3.7 anaconda
-
-
-Activate the new environment.
-
-conda activate pyvizenv
+	conda create -n pyvizenv python=3.7 anaconda
 
 
+*Activate the new environment.*
 
+	conda activate pyvizenv
 
-Install the PyViz dependencies following the gui
+*Install the PyViz dependencies following the gui*
 
 ##### Directions & Major Findings 
 
